@@ -22,8 +22,6 @@ public class RequestController {
 
     @PostMapping("/finish")
     public ResponseEntity<String> finishRequest(@RequestParam String agentName, @RequestParam String requestType) {
-      String response =  requestDistributorService.finishRequest(agentName, requestType);
-        requestDistributorService.checkAllQueues();
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(requestDistributorService.finishRequest(agentName, requestType));
     }
 }
