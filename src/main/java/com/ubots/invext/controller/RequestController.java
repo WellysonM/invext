@@ -21,7 +21,7 @@ public class RequestController {
     }
 
     @PostMapping("/finish")
-    public ResponseEntity<String> finishRequest(@RequestParam String agentName, @RequestParam String requestType) {
-        return ResponseEntity.ok(requestDistributorService.finishRequest(agentName, requestType));
+    public ResponseEntity<String> finishRequest(@RequestParam String attendantName, @RequestParam String requestType) {
+        return ResponseEntity.ok(requestDistributorService.finishRequest(attendantName, requestType));
     }
 }
