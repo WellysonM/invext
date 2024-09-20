@@ -48,6 +48,17 @@ O projeto possui dois endpoint:
         
 ```
 
+Exemplos:
+
+- POST: localhost:3000/api/requests/distribute
+
+![img_1.png](img_1.png)
+
+
+- POST: localhost:3000/api/requests/finish
+
+![img_2.png](img_2.png)
+
 ## 🛠️ Construído com
 
 Ferramentas usadas:
