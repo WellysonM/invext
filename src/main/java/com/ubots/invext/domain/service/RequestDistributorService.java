@@ -2,7 +2,10 @@ package com.ubots.invext.domain.service;
 
 import com.ubots.invext.domain.entity.Attendant;
 import com.ubots.invext.domain.entity.Team;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -13,8 +16,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 @Component
+@AllArgsConstructor
 public class RequestDistributorService {
 
+    private static final Logger logger = LoggerFactory.getLogger(RequestDistributorService.class);
     private final String CARDS = "Cards";
     private final String LOANS = "Loans";
     private final String OTHER_ISSUES = "Other Issues";
@@ -68,10 +73,10 @@ public class RequestDistributorService {
     private boolean finishHandlingRequest(Attendant attendant) {
         if (attendant.getCurrentRequests() > 0) {
             attendant.setCurrentRequests(attendant.getCurrentRequests() - 1);
-            log.info("Service request closed from {}.", attendant.getName());
+            logger.info("Service request closed from {}.", attendant.getName());
             return true;
         } else {
-            log.info("The request queue for {} is empty.", attendant.getName());
+            logger.info("The request queue for {} is empty.", attendant.getName());
             return false;
         }
     }
@@ -93,11 +98,11 @@ public class RequestDistributorService {
                 .ifPresentOrElse(attendant -> {
                     if (canHandleRequest(attendant)) {
                         attendant.setCurrentRequests(attendant.getCurrentRequests() + 1);
-                        log.info("Request '{}' assigned to {} of team {}", request, attendant.getName(), team.getName());
+                        logger.info("Request '{}' assigned to {} of team {}", request, attendant.getName(), team.getName());
                     }
                 }, () -> {
                     team.getRequestQueue().add(request);
-                    log.info("All attendants of team {} are busy. Request '{}' has been queued.", team.getName(), request);
+                    logger.info("All attendants of team {} are busy. Request '{}' has been queued.", team.getName(), request);
                 });
     }
 }

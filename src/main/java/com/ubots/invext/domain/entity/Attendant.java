@@ -1,8 +1,10 @@
 package com.ubots.invext.domain.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class Attendant {
     private String name;
     private int currentRequests;
