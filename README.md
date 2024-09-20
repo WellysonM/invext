@@ -1,54 +1,54 @@
 # Invext
 
-API Rest desenvolvida para concluir teste tecnico da Ubots.
+REST API developed to complete the technical test for Ubots.
 
-## 🚀 Começando
+## 🚀 Getting Started
 
-Essas instruções permitirão que você execute o projeto sem dificuldades;
+These instructions will allow you to run the project without difficulties.
 
-### 📋 Pré-requisitos
+### 📋 Prerequisites
 
-Java 22. Pode ser feito o download neste [link](https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html).
+Java 22. You can download it from this [link](https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html).
 
-Intellij IDEA. Pode ser feito o download neste [link](https://www.jetbrains.com/pt-br/idea/)
+IntelliJ IDEA. You can download it from this [link](https://www.jetbrains.com/pt-br/idea/)
 
-🔧 Instalação
+🔧 Installation
 
-Após clonar o projeto localmente é necessário executar o install do maven atraves do intellij ou usando o comando:
+After cloning the project locally, you need to run the Maven install through IntelliJ or using the command:
 
 ```
   - install -f pom.xml
 ```
 ### 🏗️ Build
 
-Após concluir o install do maven o projeto está pronto para ser executado, shit + f10 na classe InvextApplication.java
+Once the Maven install is complete, the project is ready to be executed. Use Shift + F10 on the class [InvextApplication.java](src/main/java/com/ubots/invext/InvextApplication.java).
 
-### ⚙️ Consumindo a API Rest
+### ⚙️ Consuming the REST API
 
-O projeto possui dois endpoint:
+The project has two endpoints:
 
 ```shell
-  # Solicitar atendimento
+  # Distribute request
   
   - POST: localhost:3000/api/requests/distribute
     - Request Param: requestType
-        - Valores esperados: Card Issues, Loan Application e Other Issues
+        - Expected values: Card Issues, Loan Application, and Other Issues
   
-  # Finalizar atendimento
+  # Finish request
   
   - POST: localhost:3000/api/requests/finish
     - Request Param: requestType
-        - Valores esperados: Card Issues, Loan Application e Other Issues
+        - Expected values: Card Issues, Loan Application, and Other Issues
     
     - Request Param: attendantName    
-        - Valores esperados: 
-          - Attendant 1 ou Attendant 2 para requestType tipo Card Issues
-          - Attendant 3 ou Attendant 4 para requestType tipo Loan Application
-          - Attendant 5 ou Attendant 6 para requestType tipo Other Issues
+        - Expected values:
+          - Attendant 1 or Attendant 2 for requestType Card Issues
+          - Attendant 3 or Attendant 4 for requestType Loan Application
+          - Attendant 5 or Attendant 6 for requestType Other Issues
         
 ```
 
-Exemplos:
+Examples:
 
 - POST: localhost:3000/api/requests/distribute
 
@@ -59,12 +59,12 @@ Exemplos:
 
 ![img_2.png](img_2.png)
 
-## 🛠️ Construído com
+## 🛠️ Built With
 
-Ferramentas usadas:
+Tools used:
 
-* [Intellij](https://www.jetbrains.com/pt-br/idea/) - Editor de código fonte
+* [Intellij](https://www.jetbrains.com/pt-br/idea/) - Source code editor
 
-## 🖇️ Colaborando
+## 🖇️ Collaborating
 
 * **Wellyson Marques** - *Backend* - [Dev](https://github.com/WellysonM)
